@@ -17,23 +17,29 @@ TAX_RATE = 0.15
 TIP_RATE = 0.2
 
 def main():
+    # Access global level variables
     global TAX_RATE
     global TIP_RATE
 
     print("THE RESTAURANT BILL CALCULATOR")
+    # Prints 30 '-'
     print("-" * 30)
-
+    
+    # Take in user input and convert to float
     baseBill = float(input("Please enter the base amount of your bill, excluding tax and tip: "))
 
+    # Perform bill calculations
     taxAmount = calculateValue(baseBill, TAX_RATE)
     tipAmount = calculateValue(baseBill, TIP_RATE)
     total = baseBill + taxAmount + tipAmount
 
+    # Output formatted text
     print("""Your Base Bill is: ${0:.2f}
     The tax rate is {1}%, for a total tax amount of: ${2:.2f}
     Your tip rate is {3}% for a total tip of: ${4:.2f}
     Your total is: ${5:.2f}""".format(baseBill, int(TAX_RATE * 100), taxAmount, int(TIP_RATE * 100), tipAmount, total))
 
+# Calculates tip and tax based on modifier
 def calculateValue(bill, modifier):
     return bill * modifier
 
