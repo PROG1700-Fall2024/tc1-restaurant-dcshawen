@@ -43,5 +43,5 @@ def main():
 def calculateValue(bill, modifier):
     return bill * modifier
 
-
-main()
+if __name__ == "__main__":
+    main()
